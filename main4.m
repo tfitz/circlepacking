@@ -67,10 +67,14 @@ while flag == 0
     
     %% Solve using a canned genetic algorithm
     options = optimoptions('ga');
-    options.PopulationSize = k*10000;
+    options.PopulationSize = 2*k*1000;
+    options.MaxGenerations = 2*k*200;
+    % since the obj function has a known minimum of 0 for feasible
+    % solutions:
+    options.FitnessLimit = 0;
     
     fprintf('Working on k=%2d\n',k)
-    [X,fval] = ga(@(X) obj(X,r),2*k,[],[],[],[],lb,ub);
+    [X,fval] = ga(@(X) obj(X,r),2*k,[],[],[],[],lb,ub,[],options);
     
     data{k}.X = X;
     data{k}.fval = fval;
