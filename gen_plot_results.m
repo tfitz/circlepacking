@@ -43,7 +43,7 @@ for i = 1:k
     plotCircle(ax, x(i),y(i), r, [0,0.0, 0.6])
 end
 
-title(ax,sprintf('Feasible solution for k =%2d',k));
+title(ax,sprintf('Feasible solution: r=%3.1f, k =%3d', r, k));
 
 
 
