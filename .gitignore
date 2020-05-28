@@ -10,6 +10,8 @@ deps/deps.jl
 *.mat
 *~
 *.asv
+codegen/
+*.mex*
 
 ## Jupyter
 .ipynb_checkpoints/
